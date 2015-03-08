@@ -2,14 +2,14 @@
 
 /**
  * @ngdoc overview
- * @name clientApp
+ * @name beltloopApp
  * @description
- * # clientApp
+ * # beltloopApp
  *
  * Main module of the application.
  */
 angular
-  .module('clientApp', [
+  .module('beltloopApp', [
     'ngAnimate',
     'ngCookies',
     'ngResource',
