@@ -15,7 +15,8 @@ angular
     'ngResource',
     'ui.router',
     'ngSanitize',
-    'ngTouch'
+    'ngTouch',
+    'leaflet-directive'
   ])
   .config(function ($stateProvider, $urlRouterProvider) {
     $stateProvider
@@ -28,6 +29,11 @@ angular
         url: '/about',
         templateUrl: 'views/about.html',
         controller: 'AboutCtrl'
+      })
+      .state('map', {
+        url: '/map',
+        templateUrl: 'views/map.html',
+        controller: 'MapCtrl'
       });
     $urlRouterProvider.otherwise('home');
   });
