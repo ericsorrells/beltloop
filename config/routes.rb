@@ -1,14 +1,11 @@
 Rails.application.routes.draw do
 
-  get 'sessions/new'
 
-  get 'sessions/create'
-
-  get 'sessions/destroy'
-
-  root "users#new"
-  resources :users
-  match '/signup',  to: 'users#new', via: 'get'
+  scope '/api' do
+    mount_devise_token_auth_for 'User', at: '/auth'
+    resources :rides, except: [:new, :edit]
+    
+  end
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
