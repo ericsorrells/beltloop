@@ -32,18 +32,18 @@
               <span class="icon-bar"></span>
             </button>
 
-            <a class="navbar-brand" href="#/">In The Loop</a>
+            <a class="navbar-brand" ui-sref="#/">In The Loop</a>
           </div>
 
           <div class="collapse navbar-collapse" id="js-navbar-collapse">
 
            <ul class="nav navbar-nav">
-              <li><a ng-href="#/">Home</a></li>
-              <li ng-show="user.id"><a ng-href="#/itineraries">Itineraries</a></li>
-              <li><a ng-href="#/about">About</a></li>
-              <li ng-show="!user.id"><a ng-href="#/sign_in">Sign in</a></li> 
-              <li ng-show="user.id"><a ng-click="signOut()" ng-href="#/">Sign out</a></li> 
-              <li ng-hide="user.id"><a ng-href="#/sign_up">Sign up</a></li>   
+              <li><a ui-sref="">Home</a></li>
+              <li ng-show="user.id"><a ui-sref="#/itineraries">Itineraries</a></li>
+              <li><a ui-sref="about">About</a></li>
+              <li ng-show="!user.id"><a ui-sref="sign_in">Sign in</a></li> 
+              <li ng-show="user.id"><a ng-click="signOut()" ui-sref="">Sign out</a></li> 
+              <li ng-hide="user.id"><a ui-sref="sign_up">Sign up</a></li>   
             </ul>
           </div>
         </div>
