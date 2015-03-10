@@ -25,10 +25,9 @@ angular
         controller: 'MainCtrl'
       })
       .state('about', {
-        url: '/about'
+        url: '/about',
         templateUrl: 'views/about.html',
         controller: 'AboutCtrl'
       });
-
-      $urlRouterProvider.otherwise('home');
+    $urlRouterProvider.otherwise('home');
   });
