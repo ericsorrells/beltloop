@@ -8,7 +8,6 @@ gem 'pg'
 gem 'devise'
 gem 'devise_token_auth', git: 'https://github.com/jasonswett/devise_token_auth.git'
 gem 'omniauth'
-gem 'pg'
 
 group :development, :test do
   gem 'rspec-rails', '~> 3.0'
