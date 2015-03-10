@@ -31,6 +31,8 @@ module.exports = function(config) {
       'bower_components/leaflet-dist/leaflet.js',
       'bower_components/angular-leaflet-directive/dist/angular-leaflet-directive.js',
       'bower_components/mapbox.js/mapbox.js',
+      'bower_components/angular-cookie/angular-cookie.js',
+      'bower_components/ng-token-auth/dist/ng-token-auth.js',
       'bower_components/angular-mocks/angular-mocks.js',
       // endbower
       'app/scripts/**/*.js',

@@ -17,6 +17,7 @@ angular
     'ngSanitize',
     'ngTouch',
     'leaflet-directive'
+    'ng-token-auth'
   ])
   .config(function ($stateProvider, $urlRouterProvider) {
     $stateProvider
@@ -30,10 +31,30 @@ angular
         templateUrl: 'views/about.html',
         controller: 'AboutCtrl'
       })
-      .state('map', {
-        url: '/map',
-        templateUrl: 'views/map.html',
-        controller: 'MapCtrl'
+      .state('sign_in', {
+        url: '/sign_in'
+        templateUrl: 'views/user_sessions/new.html',
+        controller: 'UserSessionsCtrl'
+      })
+      .state('sign_up', {
+        url: '/sign_up'
+        templateUrl: 'views/user_registrations/new.html',
+        controller: 'UserRegistrationsCtrl'
+      })
+      .state('itineraries', {
+        url: '/itineraries'
+        templateUrl: 'views/itineraries/itineraries.html',
+        controller: 'ItinerariesCtrl',
+        resolve: {
+          auth: ['$auth', function($auth) {
+            return $auth.validateUser();
+          }]
+        }
       });
     $urlRouterProvider.otherwise('home');
-  });
+  })
+  .run(['$rootScope', '$state', function($rootScope, $state) {
+    $rootScope.$on('auth:login-success', function() {
+      $state.go('/');
+    });
+  }]);

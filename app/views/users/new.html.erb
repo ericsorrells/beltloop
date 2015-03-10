@@ -1,0 +1,29 @@
+<% provide(:title, 'Sign Up') %> 
+
+
+ <div class="container">
+    <div class="row">
+      <div class="col-xs-12 center"> 
+        <div class="page-header">
+          <h3>Sign Up</h3>
+        </div>
+            <div>
+              <%= form_for(@user) do |f| %>
+                <%= render 'shared/error_messages', object: f.object  %>
+                <%= f.text_field :name, class: "field_width margin", placeholder: "Name" %>
+                <br>
+                <%= f.text_field :email, class: "field_width margin", placeholder: "Email" %>
+                <br>
+                <%= f.text_field :phone, class: "field_width margin", placeholder: "Phone" %>
+                <br> 
+                <%= f.password_field :password, class: "field_width margin", placeholder: "Password" %>
+                <br>
+                <%= f.password_field :password_confirmation, class: "field_width margin", placeholder: "Password Confirmation"   %>
+                <br>
+                <%= f.submit "Create Account", class: "btn btn-large btn-primary field_width" %>
+              <% end  %>
+            </div>
+        </div>
+      </div>          
+    </div>  
+</div>
